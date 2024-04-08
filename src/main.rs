@@ -39,6 +39,18 @@ fn main() {
 
     let quarter = Coin::Quarter;
     println!("Value of a quarter: {}", value_in_cents(quarter));
+
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {}", max);
+    }
+
+    let message = Message::Quit;
+    if let Message::Write(string) = message {
+        println!("MESSAGE: {}", string);
+    } else{
+        println!("NOT A WRITTEN MESSAGE.")
+    }
 }
 
 fn exec_message(message: Message) {
